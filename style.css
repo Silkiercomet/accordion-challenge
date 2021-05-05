@@ -13,112 +13,6 @@
 html{
     box-sizing: border-box;
     font-family: 'Kumbh Sans', sans-serif;
-    
-}
-*,*::after,*::before{
-    box-sizing: inherit;
-}
-body{
-    margin: 0;
-    padding: 2rem;
-    min-height: 100vh;
-    background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
-}
-.card{
-    position: relative;
-    display: flex;
-    border-radius: 1.7rem;
-    background-color:#ffffff ;
-    max-width: 56rem;
-    margin: 6rem auto;
-    background-image: url(images/bg-pattern-desktop.svg);
-    background-position: -13% center;
-    background-repeat: no-repeat;
-    background-size: 45%;
-    
-}
-.box{
-    z-index: 99;
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 57%;
-    transform: translateX(-50%) translateY(-50%);
-}
-.card-img{
-flex:1 ;
-display: flex;
-align-items: center;
-overflow: hidden;
-}
-#desktop{
- width: 100%;
- height: auto;
- max-width: 400px;
-transform: translateX(-4rem);
-
-}
-.card-text{
-flex: 1;
-}
-#mobile{
-    display: none;
-}
-
-@media (max-width:900px){
-    #mobile{
-        display: flex;
-        position: absolute;
-        margin: auto;
-        right: 9%;
-        left: 0;
-        bottom: 77%;
-        min-width: 400px;
-    }
-    #desktop, .box{
-        display: none;
-    }
-    .card{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-image: url(images/bg-pattern-mobile.svg);
-        background-position: top center;
-        background-size: 55%;
-    }
-   
-    .collapse{
-        display: none;
-    }
-    .card-text{
-        transform: translateY(25%);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* html{
-    box-sizing: border-box;
-    font-family: 'Kumbh Sans', sans-serif;
-    
 }
 *,*::after,*::before{
     box-sizing: inherit;
@@ -126,158 +20,97 @@ flex: 1;
 body{
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-}
-.container{
+    min-height: 100vh;
+    background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
     display: grid;
-    grid-template-columns: 40% 60%;
-    background-color: #fff;
-    color: #333;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    margin: 10px;
-    height: 450px;
-    max-width: 920px;
-    padding: 40px;
+    place-items: center;
+}
+.wrapper{
+    padding: 2rem;
     position: relative;
 }
+.card{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    min-width: 900px;
+    background-color: white;
+    border-radius: 15px;
+    min-height: 500px;
+    box-shadow: 2px 10px 15px 7px rgba(0,0,0,0.61);
+}
+.card img{
+    z-index: 99;
+    position: absolute;
+    top: 250px;
+    right: 830px;
+}
+
+/* left layout */
+
 .left{
-    max-width: 100%;
     position: relative;
     overflow: hidden;
 }
-.right{
-    max-width: 100%;
+.mobile{
+    display: none;
 }
-#img-1{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 190px;
-}
- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* accordion */
-.accordion {
-    box-sizing: border-box;
+.desktop{
     display: flex;
-    font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden;
-    width: 100%;
-}
-
-.accordion-select {
-    cursor: pointer;
-    margin: 0;
-    opacity: 0;
-    z-index: 1;
-}
-
-.accordion-title {
+    justify-content: center;
+    align-items: center;
     position: relative;
+    z-index: 98;
 }
-
-.accordion-title:not(:nth-last-child(2))::after {
-    border: 1px solid transparent;
+.desktop > *{
+    width: 100%;
+    position: absolute;
+}
+.desktop img:nth-child(1){
+    top: 100px;
+    right: 66px;
     bottom: 0;
-    content: '';
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
 }
-
-.accordion-title span {
-    bottom: 0px;
-    box-sizing: border-box;
-    display: block;
-    position: absolute;
-    white-space: nowrap;
-    width: 100%;
+.desktop img:nth-child(2){
+    top: 100px;
+    right: 66px;
+    bottom: 0;
 }
+/* left layout */
 
-.accordion-content {
-    box-sizing: border-box;
-    overflow: auto;
-    position: relative;
-    transition: margin 0.3s ease 0.1s;
-}
 
-.accordion-select:checked + .accordion-title + .accordion-content {
-    margin-bottom: 0;
-    margin-right: 0;
-}
+/* right layout */
 
-/* Generated styles starts here */
-
-.accordion {
-    border-color: #dedede;
-    border-radius: 0px;
-    border-style: solid;
-    border-width: 0px;
+.right{
+    display: flex;
     flex-direction: column;
-    height: auto;
-} 
-
-.accordion-title,
-.accordion-select  {
-    background-color: #ffffff;
-    color: #7f8787;
-    width: 100%;
-    height: 63px;
-    font-size: 15px;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1rem 2rem;
+    transition: all 500ms ease; 
+}
+.right ul{
+    list-style: none;
+    padding: 0;
+    width: 90%;
+    
+}
+.toggler{
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+.toggled{
+    display: none;
+    font-size: 1rem;
+}
+.show{
+    display: block;
+}
+#my_div > li{
+    border-bottom: 1px solid var(--divider-blue);
+    padding: 1.2rem 0;
 }
 
-.accordion-select {
-    margin-bottom: -63px;
-    margin-right: 0;
-}
-
-.accordion-title:not(:nth-last-child(2))::after {
-    border-bottom-color: rgb(234, 234, 234);
-    border-right-color: transparent;
-} 
-
-.accordion-select:hover + .accordion-title,
-.accordion-select:checked + .accordion-title {
-    background-color: #ffffff;
-} 
-
- .accordion-title span  {	
-    transform: rotate(0deg);
-    -ms-writing-mode: lr-tb;
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
-    padding-left: 32px;
-    padding-right: 32px;
-    line-height: 63px;
-} 
-
-.accordion-content {
-    background-color: #f7f7f7;
-    color: #7f8787;
-    height: 90px;
-    margin-bottom: -90px;
-    margin-right: 0;
-    padding: 16px;
-    width: 100%;
-} 
-/*  */
+/* right layout */
