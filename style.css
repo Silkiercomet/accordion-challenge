@@ -37,7 +37,7 @@ body{
     background-color: white;
     border-radius: 15px;
     min-height: 500px;
-    box-shadow: 2px 10px 15px 7px rgba(0,0,0,0.61);
+    box-shadow: 2px 10px 15px 7px rgba(0,0,0,0.34);
 }
 .card img{
     z-index: 99;
